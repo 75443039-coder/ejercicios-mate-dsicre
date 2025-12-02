@@ -14,4 +14,4 @@ if r != 1:
     print(Sn)
 else:
     Sn = a1 * n
-    print(Sn)
+    print(Sn) 
