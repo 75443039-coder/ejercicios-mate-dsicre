@@ -1,11 +1,16 @@
 
-from itertools import combinations
+def combinacion_recursiva(n, k):
+    # Casos base
+    if k == 0 or k == n:
+        return 1
+    
+    # Fórmula recursiva
+    return combinacion_recursiva(n - 1, k - 1) + combinacion_recursiva(n - 1, k)
 
-# Lista base
-elementos = ["A", "B", "C", "D"]
+# Programa principal
+n = int(input("Ingrese el valor de n: "))
+k = int(input("Ingrese el valor de k: "))
 
-k = int(input("Ingrese el tamaño de la combinación k: "))
+resultado = combinacion_recursiva(n, k)
 
-print(f"Combinaciones de tamaño {k}:")
-for combo in combinations(elementos, k):
-    print(combo)
+print(f"C({n}, {k}) = {resultado}")

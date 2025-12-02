@@ -1,8 +1,21 @@
-# Datos del ejercicio
-poblacion_inicial = 500  # cantidad de bacterias
-tiempo_en_horas = 8  # tiempo transcurrido en horas
+# ej7_variacion.py
+# Programa: variación V(n, k)
 
-# Cálculo de la población final
-poblacion_final = poblacion_inicial * (2 ** (tiempo_en_horas / 2))
+def factorial(n):
+    resultado = 1
+    for i in range(1, n + 1):
+        resultado *= i
+    return resultado
 
-print(f"La población de bacterias después de {tiempo_en_horas} horas es: {poblacion_final} bacterias")
+n = int(input("Ingresa n (total de elementos): "))
+k = int(input("Ingresa k (lugares a ordenar): "))
+
+if k < 0 or k > n:
+    print("k debe estar entre 0 y n.")
+else:
+    n_fact = factorial(n)
+    n_k_fact = factorial(n - k)
+
+    V = n_fact / n_k_fact
+
+    print("V(", n, ",", k, ") =", V)
